@@ -1,10 +1,11 @@
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
 
 void print_square(char arr[12][9]);
 void initialize_board(char arr[12][9]);
 void move_piece(char arr[12][9], int A, int B, char turn);
-int select_piece(char arr[12][9], char turn);
+void select_piece(char arr[12][9], char turn);
 int convert_character(char Z);
   
 int main()
@@ -22,8 +23,10 @@ int main()
   return (0);
 }
 
-
-int select_piece(char arr[12][9], char turn)
+/**
+ *Handles selecting of pieces
+ */
+void select_piece(char arr[12][9], char turn)
 {
   char A, B;
   int a, b, c;
@@ -35,7 +38,7 @@ int select_piece(char arr[12][9], char turn)
   while(1)
     {
       printf("A: ");
-      A = getchar();
+      A = toupper(getchar());
       while ((c = getchar()) != '\n' && c != EOF);
       printf("0: ");
       B = getchar();
@@ -47,12 +50,10 @@ int select_piece(char arr[12][9], char turn)
 	{
 	  /** Visual feedback */
 	  arr[a][b] = 'X';
-	  print_square(arr);
 	  printf("Piece at %c %c selected\n", A, B);
 	  printf("============\n");
 	  /** Move piece handler*/
 	  move_piece(arr, a, b, turn);
-	  return(1);
 	}
       else
 	{
@@ -65,12 +66,35 @@ void move_piece(char arr[12][9], int A, int B, char turn)
 {
   int i = 0, c;
   while ((c = getchar()) != '\n' && c != EOF);
-  printf("Move piece wip\n");
+  printf("Possilbe movements:\n");
+
+  /** Frontal movement representation*/
+  if (A < 12)
+    {
+      arr[A + 1][B] = '@';
+      if (B < 9)
+	arr[A + 1][B + 1] = '@';
+      if (B > 0)
+	arr[A + 1][B - 1] = '@';
+    }
+
+  /** Diagonal back movement representation*/
+  if (A > 1)
+    {
+      if (B < 9)
+	arr[A - 1][B + 1] = '@';
+      if (B > 0)
+	arr[A - 1][B - 1] = '@';
+    }
+  print_square(arr);
+
   i = getchar();
-  arr[A][B] = turn;
   printf("Invalid move\n");
 }
 
+/**
+ *Converts a char to an int
+ */
 int convert_character(char Z)
 {
   /**
@@ -78,7 +102,7 @@ int convert_character(char Z)
    */
   int i = 0;
   char A = 'A';
-  
+
   while (A != Z)
     {
       A++;
