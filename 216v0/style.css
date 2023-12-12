@@ -1,0 +1,38 @@
+#Second_Pane{
+    margin-top: 25px;
+    margin-bottom: 20px;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+#Month_Grid{
+    margin-top: 250px;
+}
+#Mini{
+    margin-left: 10px;
+}
+#Houri{
+    margin-left: 10px;
+}
+#Dayi{
+    margin-left: 10px;
+}
+#Year_Grid{
+    margin-top: 250px;
+}
+grid > grid{
+    margin-bottom: 5px;
+    margin-right: 5px;
+}
+
+paned > grid > label{
+    margin-right: 15px;
+}
+textview{
+    background-color: @theme_bg_color;
+    filter: brightness(90%);
+    border: 1px solid #AFB4B1;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    margin-left: 1px;
+    margin-right: 1px;
+}

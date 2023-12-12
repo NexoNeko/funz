@@ -1,0 +1,992 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <object id="window" class="GtkWindow">
+    <child>
+      <object class="GtkGrid" id="MainBox">
+	<property name="orientation">horizontal</property>
+	<child>
+	  <!-- First pane -->
+	  <object class="GtkPaned">
+	    <property name="orientation">vertical</property>
+	    <property name="hexpand">True</property>
+	    <property name="vexpand">True</property>
+	    <child>
+	      <!-- contents of first pane go here -->
+	      <object class="GtkGrid">
+		<child>
+		  <object id="Name_Box" class="GtkEntry">
+		    <property name="hexpand">True</property>
+		    <layout>
+		      <property name="column">0</property>
+		      <property name="row">0</property>
+		      <property name="column-span">2</property>
+		    </layout>
+		  </object>
+		</child>
+
+		<!-- Load button -->
+		<child>
+		  <object id="Button_Load" class="GtkButton">
+		    <property name="label">Load</property>
+		    <layout>
+		      <property name="column">0</property>
+		      <property name="row">1</property>
+		      <property name="column-span">1</property>
+		    </layout>
+		  </object>
+		</child>
+
+		<!-- Save button -->
+		<child>
+		  <object id="Button_Save" class="GtkButton">
+		    <property name="label">Save</property>
+		    <layout>
+		      <property name="column">1</property>
+		      <property name="row">1</property>
+		      <property name="column-span">1</property>
+		    </layout>
+		  </object>
+		</child>
+
+	      </object>
+	    </child>
+	  </object>
+	</child>
+
+	<!-- Second pane -->
+	<child>
+	  <object class="GtkPaned">
+	    <property name="name">Second_Pane</property>
+	    <property name="orientation">vertical</property>
+	    <property name="hexpand">True</property>
+	    <property name="vexpand">True</property>
+	    <child>
+	      <!-- contents of second pane go here -->
+	      <object class="GtkGrid">
+		<!-- Row 0 -->
+		<!--Column 0-->
+		<child>
+		  <object id="Padding_Min" class="GtkLabel">
+		    <property name="hexpand">True</property>
+		    <property name="label"></property>
+		    <layout>
+		      <property name="column">0</property>
+		      <property name="row">0</property>
+		    </layout>
+		  </object>
+		</child>
+		<!-- Column 1 -->
+		<child>
+		  <object id="Label_Min" class="GtkLabel">
+		    <property name="hexpand">True</property>
+		    <property name="label">Min</property>
+		    <property name="name">Mini</property>
+		    <layout>
+		      <property name="column">1</property>
+		      <property name="row">0</property>
+		    </layout>
+		  </object>
+		</child>
+		<!-- Column 2 -->
+		<child>
+		  <object id="Label_Hour" class="GtkLabel">
+		    <property name="hexpand">True</property>
+		    <property name="label">Hour</property>
+		    <property name="name">Houri</property>
+		    <layout>
+		      <property name="column">2</property>
+		      <property name="row">0</property>
+		    </layout>
+		  </object>
+		</child>
+		<!-- Column 3 -->
+		<child>
+		  <object id="Label_Day" class="GtkLabel">
+		    <property name="hexpand">True</property>
+		    <property name="label">Day</property>
+		    <property name="name">Dayi</property>
+		    <layout>
+		      <property name="column">3</property>
+		      <property name="row">0</property>
+		    </layout>
+		  </object>
+		</child>
+
+		<!--Row 1-->
+		<!-- Column 0 -->
+		<child>
+		  <object id="T" class="GtkLabel">
+		    <property name="label">T</property>
+		    <layout>
+		      <property name="column">0</property>
+		      <property name="row">1</property>
+		    </layout>
+		  </object>
+		</child>
+		<!-- Column 1 -->
+		<!--Three way button min -->
+		<child>
+		  <object class="GtkGrid">
+		    <property name="column-homogeneous">TRUE</property>
+		    <layout>
+		      <property name="column">1</property>
+		      <property name="row">1</property>
+		      <property name="column-span">1</property>
+		    </layout>
+		    <child>
+		      <object id="T_Min_Button_+" class="GtkButton">
+			<property name="label">+</property>
+			<layout>
+			  <property name="column">0</property>
+			  <property name="row">0</property>
+			  <property name="column-span">1</property>
+			  <property name="row-span">1</property>
+			</layout>
+		      </object>
+		    </child>
+		    <child>
+		      <object id="T_Min_Button_-" class="GtkButton">
+			<property name="label">-</property>
+			<layout>
+			  <property name="column">0</property>
+			  <property name="row">1</property>
+			  <property name="column-span">1</property>
+			  <property name="row-span">1</property>
+			</layout>
+		      </object>
+		    </child>
+		    <child>
+		      <object id="T_Min_Display" class="GtkTextView">
+			<property name="hexpand">True</property>
+			<property name="editable">False</property>
+			<property name="can_focus">False</property>
+			<layout>
+			  <property name="column">1</property>
+			  <property name="column-span">1</property>
+			  <property name="row-span">2</property>
+			</layout>
+		      </object>
+		    </child>
+		    <child>
+		      <object id="T_Min_Button_Reset" class="GtkButton">
+			<property name="label">R</property>
+			<layout>
+			  <property name="column">2</property>
+			  <property name="column-span">1</property>
+			  <property name="row-span">2</property>
+			</layout>
+		      </object>
+		    </child>
+		  </object>
+		</child>
+		<!--/Three way button Min -->
+		<!-- Column 2 -->
+		<!--Three way button Hour -->
+		<child>
+		  <object class="GtkGrid">
+		    <property name="column-homogeneous">TRUE</property>
+		    <layout>
+		      <property name="column">2</property>
+		      <property name="row">1</property>
+		      <property name="column-span">1</property>
+		    </layout>
+		    <child>
+		      <object id="T_Hour_Button_+" class="GtkButton">
+			<property name="label">+</property>
+			<layout>
+			  <property name="column">0</property>
+			  <property name="row">0</property>
+			  <property name="column-span">1</property>
+			  <property name="row-span">1</property>
+			</layout>
+		      </object>
+		    </child>
+		    <child>
+		      <object id="T_Hour_Button_-" class="GtkButton">
+			<property name="label">-</property>
+			<layout>
+			  <property name="column">0</property>
+			  <property name="row">1</property>
+			  <property name="column-span">1</property>
+			  <property name="row-span">1</property>
+			</layout>
+		      </object>
+		    </child>
+		    <child>
+		      <object id="T_Hour_Display" class="GtkTextView">
+			<property name="hexpand">True</property>
+			<property name="editable">False</property>
+			<property name="can_focus">False</property>
+			<layout>
+			  <property name="column">1</property>
+			  <property name="column-span">1</property>
+			  <property name="row-span">2</property>
+			</layout>
+		      </object>
+		    </child>
+		    <child>
+		      <object id="T_Hour_Button_Reset" class="GtkButton">
+			<property name="label">R</property>
+			<layout>
+			  <property name="column">2</property>
+			  <property name="column-span">1</property>
+			  <property name="row-span">2</property>
+			</layout>
+		      </object>
+		    </child>
+		  </object>
+		</child>
+		<!--/Three way button Hour -->
+		<!-- Column 3 -->
+		<!--Three way button Day -->
+		<child>
+		  <object class="GtkGrid">
+		    <property name="column-homogeneous">TRUE</property>
+		    <layout>
+		      <property name="column">3</property>
+		      <property name="row">1</property>
+		      <property name="column-span">1</property>
+		    </layout>
+		    <child>
+		      <object id="T_Day_Button_+" class="GtkButton">
+			<property name="label">+</property>
+			<layout>
+			  <property name="column">0</property>
+			  <property name="row">0</property>
+			  <property name="column-span">1</property>
+			  <property name="row-span">1</property>
+			</layout>
+		      </object>
+		    </child>
+		    <child>
+		      <object id="T_Day_Button_-" class="GtkButton">
+			<property name="label">-</property>
+			<layout>
+			  <property name="column">0</property>
+			  <property name="row">1</property>
+			  <property name="column-span">1</property>
+			  <property name="row-span">1</property>
+			</layout>
+		      </object>
+		    </child>
+		    <child>
+		      <object id="T_Day_Display" class="GtkTextView">
+			<property name="hexpand">True</property>
+			<property name="editable">False</property>
+			<property name="can_focus">False</property>
+			<layout>
+			  <property name="column">1</property>
+			  <property name="column-span">1</property>
+			  <property name="row-span">2</property>
+			</layout>
+		      </object>
+		    </child>
+		    <child>
+		      <object id="T_Day_Button_Reset" class="GtkButton">
+			<property name="label">R</property>
+			<layout>
+			  <property name="column">2</property>
+			  <property name="column-span">1</property>
+			  <property name="row-span">2</property>
+			</layout>
+		      </object>
+		    </child>
+		  </object>
+		</child>
+		<!--/Three way button Day -->
+
+		<!--Row 2-->
+		<!-- Column 0-->
+		<child>
+		  <object id="H" class="GtkLabel">
+		    <property name="label">H</property>
+		    <layout>
+		      <property name="column">0</property>
+		      <property name="row">2</property>
+		    </layout>
+		  </object>
+		</child>
+		<!-- Column 1 -->
+		<!--Three way button min H-->
+		<child>
+		  <object class="GtkGrid">
+		    <property name="column-homogeneous">TRUE</property>
+		    <layout>
+		      <property name="column">1</property>
+		      <property name="row">2</property>
+		      <property name="column-span">1</property>
+		    </layout>
+		    <child>
+		      <object id="H_Min_Button_+" class="GtkButton">
+			<property name="label">+</property>
+			<layout>
+			  <property name="column">0</property>
+			  <property name="row">0</property>
+			  <property name="column-span">1</property>
+			  <property name="row-span">1</property>
+			</layout>
+		      </object>
+		    </child>
+		    <child>
+		      <object id="H_Min_Button_-" class="GtkButton">
+			<property name="label">-</property>
+			<layout>
+			  <property name="column">0</property>
+			  <property name="row">1</property>
+			  <property name="column-span">1</property>
+			  <property name="row-span">1</property>
+			</layout>
+		      </object>
+		    </child>
+		    <child>
+		      <object id="H_Min_Display" class="GtkTextView">
+			<property name="hexpand">True</property>
+			<property name="editable">False</property>
+			<property name="can_focus">False</property>
+			<layout>
+			  <property name="column">1</property>
+			  <property name="column-span">1</property>
+			  <property name="row-span">2</property>
+			</layout>
+		      </object>
+		    </child>
+		    <child>
+		      <object id="H_Min_Button_Reset" class="GtkButton">
+			<property name="label">R</property>
+			<layout>
+			  <property name="column">2</property>
+			  <property name="column-span">1</property>
+			  <property name="row-span">2</property>
+			</layout>
+		      </object>
+		    </child>
+		  </object>
+		</child>
+		<!--/Three way button Min -->
+		<!-- Column 2 -->
+		<!--Three way button Hour H-->
+		<child>
+		  <object class="GtkGrid">
+		    <property name="column-homogeneous">TRUE</property>
+		    <layout>
+		      <property name="column">2</property>
+		      <property name="row">2</property>
+		      <property name="column-span">1</property>
+		    </layout>
+		    <child>
+		      <object id="H_Hour_Button_+" class="GtkButton">
+			<property name="label">+</property>
+			<layout>
+			  <property name="column">0</property>
+			  <property name="row">0</property>
+			  <property name="column-span">1</property>
+			  <property name="row-span">1</property>
+			</layout>
+		      </object>
+		    </child>
+		    <child>
+		      <object id="H_Hour_Button_-" class="GtkButton">
+			<property name="label">-</property>
+			<layout>
+			  <property name="column">0</property>
+			  <property name="row">1</property>
+			  <property name="column-span">1</property>
+			  <property name="row-span">1</property>
+			</layout>
+		      </object>
+		    </child>
+		    <child>
+		      <object id="H_Hour_Display" class="GtkTextView">
+			<property name="hexpand">True</property>
+			<property name="editable">False</property>
+			<property name="can_focus">False</property>
+			<layout>
+			  <property name="column">1</property>
+			  <property name="column-span">1</property>
+			  <property name="row-span">2</property>
+			</layout>
+		      </object>
+		    </child>
+		    <child>
+		      <object id="H_Hour_Button_Reset" class="GtkButton">
+			<property name="label">R</property>
+			<layout>
+			  <property name="column">2</property>
+			  <property name="column-span">1</property>
+			  <property name="row-span">2</property>
+			</layout>
+		      </object>
+		    </child>
+		  </object>
+		</child>
+		<!--/Three way button Hour -->
+		<!-- Column 3 -->
+		<!--Three way button Day H-->
+		<child>
+		  <object class="GtkGrid">
+		    <property name="column-homogeneous">TRUE</property>
+		    <layout>
+		      <property name="column">3</property>
+		      <property name="row">2</property>
+		      <property name="column-span">1</property>
+		    </layout>
+		    <child>
+		      <object id="H_Day_Button_+" class="GtkButton">
+			<property name="label">+</property>
+			<layout>
+			  <property name="column">0</property>
+			  <property name="row">0</property>
+			  <property name="column-span">1</property>
+			  <property name="row-span">1</property>
+			</layout>
+		      </object>
+		    </child>
+		    <child>
+		      <object id="H_Day_Button_-" class="GtkButton">
+			<property name="label">-</property>
+			<layout>
+			  <property name="column">0</property>
+			  <property name="row">1</property>
+			  <property name="column-span">1</property>
+			  <property name="row-span">1</property>
+			</layout>
+		      </object>
+		    </child>
+		    <child>
+		      <object id="H_Day_Display" class="GtkTextView">
+			<property name="hexpand">True</property>
+			<property name="editable">False</property>
+			<property name="can_focus">False</property>
+			<layout>
+			  <property name="column">1</property>
+			  <property name="column-span">1</property>
+			  <property name="row-span">2</property>
+			</layout>
+		      </object>
+		    </child>
+		    <child>
+		      <object id="H_Day_Button_Reset" class="GtkButton">
+			<property name="label">R</property>
+			<layout>
+			  <property name="column">2</property>
+			  <property name="column-span">1</property>
+			  <property name="row-span">2</property>
+			</layout>
+		      </object>
+		    </child>
+		  </object>
+		</child>
+		<!--/Three way button Day -->
+
+		<!--Row 3-->
+		<!-- Column 0 -->
+		<child>
+		  <object id="S" class="GtkLabel">
+		    <property name="label">S</property>
+		    <layout>
+		      <property name="column">0</property>
+		      <property name="row">3</property>
+		    </layout>
+		  </object>
+		</child>
+		<!-- Column 1 -->
+		<!--Three way button Min S-->
+		<child>
+		  <object class="GtkGrid">
+		    <property name="column-homogeneous">TRUE</property>
+		    <layout>
+		      <property name="column">1</property>
+		      <property name="row">3</property>
+		      <property name="column-span">1</property>
+		    </layout>
+		    <child>
+		      <object id="S_Min_Button_+" class="GtkButton">
+			<property name="label">+</property>
+			<layout>
+			  <property name="column">0</property>
+			  <property name="row">0</property>
+			  <property name="column-span">1</property>
+			  <property name="row-span">1</property>
+			</layout>
+		      </object>
+		    </child>
+		    <child>
+		      <object id="S_Min_Button_-" class="GtkButton">
+			<property name="label">-</property>
+			<layout>
+			  <property name="column">0</property>
+			  <property name="row">1</property>
+			  <property name="column-span">1</property>
+			  <property name="row-span">1</property>
+			</layout>
+		      </object>
+		    </child>
+		    <child>
+		      <object id="S_Min_Display" class="GtkTextView">
+			<property name="hexpand">True</property>
+			<property name="editable">False</property>
+			<property name="can_focus">False</property>
+			<layout>
+			  <property name="column">1</property>
+			  <property name="column-span">1</property>
+			  <property name="row-span">2</property>
+			</layout>
+		      </object>
+		    </child>
+		    <child>
+		      <object id="S_Min_Button_Reset" class="GtkButton">
+			<property name="label">R</property>
+			<layout>
+			  <property name="column">2</property>
+			  <property name="column-span">1</property>
+			  <property name="row-span">2</property>
+			</layout>
+		      </object>
+		    </child>
+		  </object>
+		</child>
+		<!--/Three way button Min -->
+		<!-- Column 2 -->
+		<!--Three way button Hour S-->
+		<child>
+		  <object class="GtkGrid">
+		    <property name="column-homogeneous">TRUE</property>
+		    <layout>
+		      <property name="column">2</property>
+		      <property name="row">3</property>
+		      <property name="column-span">1</property>
+		    </layout>
+		    <child>
+		      <object id="S_Hour_Button_+" class="GtkButton">
+			<property name="label">+</property>
+			<layout>
+			  <property name="column">0</property>
+			  <property name="row">0</property>
+			  <property name="column-span">1</property>
+			  <property name="row-span">1</property>
+			</layout>
+		      </object>
+		    </child>
+		    <child>
+		      <object id="S_Hour_Button_-" class="GtkButton">
+			<property name="label">-</property>
+			<layout>
+			  <property name="column">0</property>
+			  <property name="row">1</property>
+			  <property name="column-span">1</property>
+			  <property name="row-span">1</property>
+			</layout>
+		      </object>
+		    </child>
+		    <child>
+		      <object id="S_Hour_Display" class="GtkTextView">
+			<property name="hexpand">True</property>
+			<property name="editable">False</property>
+			<property name="can_focus">False</property>
+			<layout>
+			  <property name="column">1</property>
+			  <property name="column-span">1</property>
+			  <property name="row-span">2</property>
+			</layout>
+		      </object>
+		    </child>
+		    <child>
+		      <object id="S_Hour_Button_Reset" class="GtkButton">
+			<property name="label">R</property>
+			<layout>
+			  <property name="column">2</property>
+			  <property name="column-span">1</property>
+			  <property name="row-span">2</property>
+			</layout>
+		      </object>
+		    </child>
+		  </object>
+		</child>
+		<!--/Three way button Hour -->
+		<!-- Column 3 -->
+		<!--Three way button Day S-->
+		<child>
+		  <object class="GtkGrid">
+		    <property name="column-homogeneous">TRUE</property>
+		    <layout>
+		      <property name="column">3</property>
+		      <property name="row">3</property>
+		      <property name="column-span">1</property>
+		    </layout>
+		    <child>
+		      <object id="S_Day_Button_+" class="GtkButton">
+			<property name="label">+</property>
+			<layout>
+			  <property name="column">0</property>
+			  <property name="row">0</property>
+			  <property name="column-span">1</property>
+			  <property name="row-span">1</property>
+			</layout>
+		      </object>
+		    </child>
+		    <child>
+		      <object id="S_Day_Button_-" class="GtkButton">
+			<property name="label">-</property>
+			<layout>
+			  <property name="column">0</property>
+			  <property name="row">1</property>
+			  <property name="column-span">1</property>
+			  <property name="row-span">1</property>
+			</layout>
+		      </object>
+		    </child>
+		    <child>
+		      <object id="S_Day_Display" class="GtkTextView">
+			<property name="hexpand">True</property>
+			<property name="editable">False</property>
+			<property name="can_focus">False</property>
+			<layout>
+			  <property name="column">1</property>
+			  <property name="column-span">1</property>
+			  <property name="row-span">2</property>
+			</layout>
+		      </object>
+		    </child>
+		    <child>
+		      <object id="S_Day_Button_Reset" class="GtkButton">
+			<property name="label">R</property>
+			<layout>
+			  <property name="column">2</property>
+			  <property name="column-span">1</property>
+			  <property name="row-span">2</property>
+			</layout>
+		      </object>
+		    </child>
+		  </object>
+		</child>
+		<!--/Three way button Day S -->
+
+		<!--Row 4-->
+		<!-- Column 0 -->
+		<child>
+		  <object id="A" class="GtkLabel">
+		    <property name="label">A</property>
+		    <layout>
+		      <property name="column">0</property>
+		      <property name="row">4</property>
+		    </layout>
+		  </object>
+		</child>
+		<!-- Column 1 -->
+		<!--Three way button min A-->
+		<child>
+		  <object class="GtkGrid">
+		    <property name="column-homogeneous">TRUE</property>
+		    <layout>
+		      <property name="column">1</property>
+		      <property name="row">4</property>
+		      <property name="column-span">1</property>
+		    </layout>
+		    <child>
+		      <object id="A_Min_Button_+" class="GtkButton">
+			<property name="label">+</property>
+			<layout>
+			  <property name="column">0</property>
+			  <property name="row">0</property>
+			  <property name="column-span">1</property>
+			  <property name="row-span">1</property>
+			</layout>
+		      </object>
+		    </child>
+		    <child>
+		      <object id="A_Min_Button_-" class="GtkButton">
+			<property name="label">-</property>
+			<layout>
+			  <property name="column">0</property>
+			  <property name="row">1</property>
+			  <property name="column-span">1</property>
+			  <property name="row-span">1</property>
+			</layout>
+		      </object>
+		    </child>
+		    <child>
+		      <object id="A_Min_Display" class="GtkTextView">
+			<property name="hexpand">True</property>
+			<property name="editable">False</property>
+			<property name="can_focus">False</property>
+			<layout>
+			  <property name="column">1</property>
+			  <property name="column-span">1</property>
+			  <property name="row-span">2</property>
+			</layout>
+		      </object>
+		    </child>
+		    <child>
+		      <object id="A_Min_Button_Reset" class="GtkButton">
+			<property name="label">R</property>
+			<layout>
+			  <property name="column">2</property>
+			  <property name="column-span">1</property>
+			  <property name="row-span">2</property>
+			</layout>
+		      </object>
+		    </child>
+		  </object>
+		</child>
+		<!--/Three way button Min A -->
+		<!-- Column 2 -->
+		<!--Three way button Hour A -->
+		<child>
+		  <object class="GtkGrid">
+		    <property name="column-homogeneous">TRUE</property>x
+		    <layout>
+		      <property name="column">2</property>
+		      <property name="row">4</property>
+		      <property name="column-span">1</property>
+		    </layout>
+		    <child>
+		      <object id="A_Hour_Button_+" class="GtkButton">
+			<property name="label">+</property>
+			<layout>
+			  <property name="column">0</property>
+			  <property name="row">0</property>
+			  <property name="column-span">1</property>
+			  <property name="row-span">1</property>
+			</layout>
+		      </object>
+		    </child>
+		    <child>
+		      <object id="A_Hour_Button_-" class="GtkButton">
+			<property name="label">-</property>
+			<layout>
+			  <property name="column">0</property>
+			  <property name="row">1</property>
+			  <property name="column-span">1</property>
+			  <property name="row-span">1</property>
+			</layout>
+		      </object>
+		    </child>
+		    <child>
+		      <object id="A_Hour_Display" class="GtkTextView">
+			<property name="hexpand">True</property>
+			<property name="editable">False</property>
+			<property name="can_focus">False</property>
+			<layout>
+			  <property name="column">1</property>
+			  <property name="column-span">1</property>
+			  <property name="row-span">2</property>
+			</layout>
+		      </object>
+		    </child>
+		    <child>
+		      <object id="A_Hour_Button_Reset" class="GtkButton">
+			<property name="label">R</property>
+			<layout>
+			  <property name="column">2</property>
+			  <property name="column-span">1</property>
+			  <property name="row-span">2</property>
+			</layout>
+		      </object>
+		    </child>
+		  </object>
+		</child>
+		<!--/Three way button Hour A -->
+		<!-- Column 3 -->
+		<!--Three way button Day A-->
+		<child>
+		  <object class="GtkGrid">
+		    <property name="column-homogeneous">TRUE</property>
+		    <layout>
+		      <property name="column">3</property>
+		      <property name="row">4</property>
+		      <property name="column-span">1</property>
+		    </layout>
+		    <child>
+		      <object id="A_Day_Button_+" class="GtkButton">
+			<property name="label">+</property>
+			<layout>
+			  <property name="column">0</property>
+			  <property name="row">0</property>
+			  <property name="column-span">1</property>
+			  <property name="row-span">1</property>
+			</layout>
+		      </object>
+		    </child>
+		    <child>
+		      <object id="A_Day_Button_-" class="GtkButton">
+			<property name="label">-</property>
+			<layout>
+			  <property name="column">0</property>
+			  <property name="row">1</property>
+			  <property name="column-span">1</property>
+			  <property name="row-span">1</property>
+			</layout>
+		      </object>
+		    </child>
+		    <child>
+		      <object id="A_Day_Display" class="GtkTextView">
+			<property name="hexpand">True</property>
+			<property name="editable">False</property>
+			<property name="can_focus">False</property>
+			<layout>
+			  <property name="column">1</property>
+			  <property name="column-span">1</property>
+			  <property name="row-span">2</property>
+			</layout>
+		      </object>
+		    </child>
+		    <child>
+		      <object id="A_Day_Button_Reset" class="GtkButton">
+			<property name="label">R</property>
+			<layout>
+			  <property name="column">2</property>
+			  <property name="column-span">1</property>
+			  <property name="row-span">2</property>
+			</layout>
+		      </object>
+		    </child>
+		  </object>
+		</child>p
+		<!--/Three way button Day A -->
+
+		<!-- / Conten second pane -->
+	      </object>
+	    </child>
+	  </object>
+	</child>
+	<!-- / second pane -->
+
+	<!-- Third pane -->
+	<child>
+	  <object class="GtkPaned">
+	    <property name="orientation">vertical</property>
+	    <property name="hexpand">True</property>
+	    <property name="vexpand">True</property>
+	    <child>
+	      <!-- contents of third pane go here -->
+	      <object class="GtkGrid">
+		<child>
+		  <object id="Label_Month" class="GtkLabel">
+		    <property name="label">Month</property>
+		    <property name="hexpand">True</property>
+		    <layout>
+		      <property name="column">0</property>
+		      <property name="row">0</property>
+		      <property name="column-span">1</property>
+		    </layout>
+		  </object>
+		</child>
+
+		<child>
+		  <object id="Label_Year" class="GtkLabel">
+		    <property name="label">Year</property>
+		    <property name="hexpand">True</property>
+		    <layout>
+		      <property name="column">1</property>
+		      <property name="row">0</property>
+		      <property name="column-span">1</property>
+		    </layout>
+		  </object>
+		</child>
+
+		<!--Three way button month -->
+		<child>
+		  <object class="GtkGrid">
+		    <property name="column-homogeneous">TRUE</property>
+		    <property name="name">Month_Grid</property>
+		    <layout>
+		      <property name="column">0</property>
+		      <property name="row">1</property>
+		      <property name="column-span">1</property>
+		    </layout>
+		    <child>
+		      <object id="Month_Button_+" class="GtkButton">
+			<property name="label">+</property>
+			<layout>
+			  <property name="column">0</property>
+			  <property name="row">0</property>
+			  <property name="column-span">1</property>
+			  <property name="row-span">1</property>
+			</layout>
+		      </object>
+		    </child>
+		    <child>
+		      <object id="Month_Button_-" class="GtkButton">
+			<property name="label">-</property>
+			<layout>
+			  <property name="column">0</property>
+			  <property name="row">1</property>
+			  <property name="column-span">1</property>
+			  <property name="row-span">1</property>
+			</layout>
+		      </object>
+		    </child>
+		    <child>
+		      <object id="Month_Display" class="GtkTextView">
+			<property name="hexpand">True</property>
+			<property name="editable">False</property>
+			<property name="can_focus">False</property>
+			<layout>
+			  <property name="column">1</property>
+			  <property name="column-span">1</property>
+			  <property name="row-span">2</property>
+			</layout>
+		      </object>
+		    </child>
+		  </object>
+		</child>
+		<!--/Three way button month -->
+
+		<!--Three way button year -->
+		<child>
+		  <object class="GtkGrid">
+		    <property name="column-homogeneous">TRUE</property>
+		    <property name="name">Year_Grid</property>
+		    <layout>
+		      <property name="column">1</property>
+		      <property name="row">1</property>
+		      <property name="column-span">1</property>
+		    </layout>
+		    <child>
+		      <object id="Year_Button_+" class="GtkButton">
+			<property name="label">+</property>
+			<layout>
+			  <property name="column">0</property>
+			  <property name="row">0</property>
+			  <property name="column-span">1</property>
+			  <property name="row-span">1</property>
+			</layout>
+		      </object>
+		    </child>
+		    <child>
+		      <object id="Year_Button_-" class="GtkButton">
+			<property name="label">-</property>
+			<layout>
+			  <property name="column">0</property>
+			  <property name="row">1</property>
+			  <property name="column-span">1</property>
+			  <property name="row-span">1</property>
+			</layout>
+		      </object>
+		    </child>
+		    <child>
+		      <object id="Year_Display" class="GtkTextView">
+			<property name="hexpand">True</property>
+			<property name="editable">False</property>
+			<property name="can_focus">False</property>
+			<layout>
+			  <property name="column">1</property>
+			  <property name="column-span">1</property>
+			  <property name="row-span">2</property>
+			</layout>
+		      </object>
+		    </child>
+
+		  </object>
+		</child>
+		<!--/Three way button month -->
+
+	  </object>
+	</child>
+      </object>
+      <!-- End of main panes -->
+	</child>
+      </object>
+    </child>
+  </object>
+</interface>
